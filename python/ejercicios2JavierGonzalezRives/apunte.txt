@@ -1,0 +1,3 @@
+la cadena de bytes que se genera la clave el rango puede ser de 16 o de 32
+AES 128 -> clave de 16 bits
+AES 256 -> clae de 32 bits
