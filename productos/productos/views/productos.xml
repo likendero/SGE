@@ -56,7 +56,7 @@
 	 <menuitem name="Menu 2" id="videoclub.menu_2" parent="videoclub.menu_root"/>
     -->
     <!-- actions -->
-    <!--
+    
     <menuitem name="Listado de productos" id="productos.productos_list" parent="productos.productos"
               action="productos.action_window_productos"/>
 	<!--

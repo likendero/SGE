@@ -25,7 +25,8 @@
     'data': [
         # 'security/ir.model.access.csv',
         #'views/futbolistas.xml',
-        #'views/templates.xml',
+        'views/templates.xml',
+        'views/productos.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
