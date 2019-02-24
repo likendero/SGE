@@ -6,10 +6,10 @@ from odoo import models, fields, api
 class productos(models.Model):
     _name = 'productos.productos'
 
-    nombre = fields.Char()
-    stock = fields.Integer()
-    precio = fields.Float(compute="_value_pc", store=True)
-    descripcion = fields.Text()
+    Nombre = fields.Char()
+    Stock = fields.Integer()
+    Precio = fields.Float(compute="_value_pc", store=True)
+    Descripcion = fields.Text()
 #
 #     @api.depends('value')
 #     def _value_pc(self):
