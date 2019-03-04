@@ -10,7 +10,7 @@ class libros(models.Model):
 	Autor = fields.Char(string='Autor')
 	Editorial = fields.Char(string='Editorial')
 
-class autores():
+class autores(models.Model):
 	_name = 'biblioteca.autores'
 
 	Nombre = fields.Char(string='Nombre')
