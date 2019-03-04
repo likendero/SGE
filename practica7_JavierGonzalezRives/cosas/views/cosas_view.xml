@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views --> 
+     <record id="view_ej_cosas_form" model="ir.ui.view"> 
+        <field name="name">ej.cosas.form</field> 
+        <field name="model">ej.cosas</field> 
+        <field name="arch" type="xml"> 
+            <form string="Listado de Cosas"> 
+                <group> 
+                    <field name="cosa1"/> 
+                    <field name="cosa2"/> 
+                    <field name="cosa3"/> 
+                    <field name="cosa4"/> 
+                    <field name="cosa5"/> 
+                </group> 
+            </form> 
+        </field> 
+    </record> 
+     <record id="view_ej_cosas_tree" model="ir.ui.view"> 
+        <field name="name">ej.cosas.tree</field> 
+        <field name="model">ej.cosas</field> 
+        <field name="arch" type="xml"> 
+           <tree> 
+                    <field name="cosa1"/> 
+                    <field name="cosa2"/> 
+                    <field name="cosa3"/> 
+                    <field name="cosa4"/> 
+                    <field name="cosa5"/> 
+           </tree> 
+        </field> 
+    </record> 
+    <record model="ir.actions.act_window" id="act_ej_cosas"> 
+        <field name="name">cosas</field> 
+        <field name="type">ir.actions.act_window</field> 
+        <field name="res_model">ej.cosas</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+    </record> 
+<!--  Declaramos los menu --> 
+<menuitem id="ej_cosas_menu" name="Cosas" sequence="10"/> 
+<menuitem id="submenu_ej_cosas_menu" name="Cosas" sequence="10" parent="ej_cosas_menu"/> 
+<menuitem id="submenu_ej_cosas_action" name="Cosas" sequence="10" parent="submenu_ej_cosas_menu" action="act_ej_cosas"/> 
+</odoo> 

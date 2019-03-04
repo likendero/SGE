@@ -1,0 +1,86 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="biblioteca.list_libros">
+      <field name="name">Lista de libros</field>
+      <field name="model">biblioteca.libros</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Nombre"/>
+          <field name="Autor"/>
+          <field name="Editorial"/>
+        </tree>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+   
+    <record model="ir.actions.act_window" id="biblioteca.action_window_libros">
+      <field name="name">Ventana de libros</field>
+      <field name="res_model">biblioteca.libros</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+     <!-- como viene en el esqueleto -->
+	 
+    <record model="ir.actions.server" id="biblioteca.action_server">
+      <field name="name">Libros server</field>
+      <field name="model_id" ref="model_biblioteca_libros"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+     
+	  <!-- Hecho yo -->
+	 <!--
+	 <record model="ir.actions.server" id="futbol.action_server">
+      <field name="name">Futbolistas server</field>
+      <field name="model_id" ref="model_futbol_futbolistas"/>
+      <field name="arch" type="xml">
+		<form string="Listado de Futbolistas"
+			<group>
+				<field name="Nombre"/>
+				<field name="Equipo"/>
+				<field name="Edad"/>
+			</group>
+		</form>
+      </field>
+    </record>
+	-->
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Biblioteca" id="biblioteca.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Libros" id="biblioteca.libros" parent="biblioteca.menu_root"/>
+	<!--
+	<menuitem name="Mas futbolistas" id="futbol.menu_2" parent="futbol.menu_root"/>
+	-->
+	<!--
+	 <menuitem name="Menu 2" id="videoclub.menu_2" parent="videoclub.menu_root"/>
+    -->
+    <!-- actions -->
+    
+    <menuitem name="Listado de libros" id="biblioteca.libros_list" parent="biblioteca.libros"
+              action="biblioteca.action_window_libros"/>
+	
+	<!--
+	<menuitem name="Otro listado" id="futbol.menu12_list" parent="futbol.menu_2"
+              action="futbol.action_server"/>
+	 -->
+			  <!--
+    <menuitem name="Server to list" id="videoclub" parent="videoclub.menu_2"
+              action="videoclub.action_server"/>
+    -->
+  </data>
+</odoo>
